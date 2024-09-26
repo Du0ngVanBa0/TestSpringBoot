@@ -1,8 +1,5 @@
 package com.example.demo.dto.product;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public record ProductResponseDTO (
      Long productId,
      String name,
