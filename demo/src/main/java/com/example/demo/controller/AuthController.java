@@ -29,18 +29,10 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest data) {
         Optional<User> userOptional = userService.findByEmail(data.email());
-        if (userOptional.isPresent()){
-            User currentUser = userOptional.get();
-            if (currentUser.isEnabled()){
-                return new ResponseEntity<>(new MessageResponse("Email has been registered!"), HttpStatus.BAD_REQUEST);
-            }
+        if (userOptional.isPresent()) {
+            return new ResponseEntity<>(new MessageResponse("Email has been registered!"), HttpStatus.BAD_REQUEST);
         }
-        AuthResponse res;
-        try {
-            res = authService.register(data);
-        } catch (Exception e) {
-            return new ResponseEntity<>(new MessageResponse("OTP registered failed!"), HttpStatus.BAD_REQUEST);
-        }
+        AuthResponse res = authService.register(data);
         return new ResponseEntity<>(res, HttpStatus.CREATED);
     }
 

@@ -19,7 +19,7 @@ import java.util.function.Function;
 public class JwtService {
     public JwtService() {
     }
-
+//JWT_SECRET=EmiliaTanBakaSamaEmiliaTanBakaSamaEmiliaTanBakaSamaEmiliaTanBakaSamaEmiliaTanBakaSamaEmiliaTanBakaSamaEmiliaTanBakaSamaEmiliaTanBakaSamaEmiliaTanBakaSamaEmiliaTanBakaSamaEmiliaTanBakaSama
     private final String jwtSecret = System.getenv("JWT_SECRET");
     private final long jwtExpirationMs = 1000 * 60 * 60;
 

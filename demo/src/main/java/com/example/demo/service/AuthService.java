@@ -33,7 +33,7 @@ public class AuthService {
         this.authenticationManager = authenticationManager;
     }
 
-    public AuthResponse register(RegisterRequest data) throws Exception {
+    public AuthResponse register(RegisterRequest data) {
         var user = User.builder()
                 .name(data.name())
                 .email(data.email())
